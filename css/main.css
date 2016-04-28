@@ -1,0 +1,58 @@
+
+.underline {
+	text-decoration: underline;
+}
+
+header {
+	border:1px solid black;
+	margin:0;
+	padding:0;
+}
+
+.happyFace {
+	padding: 1% 7%;
+	border: 4px solid black;
+	margin-bottom:-0.4%;
+	width:12%;
+}
+
+.logo {
+	float:right;
+	margin-top:-14%;
+	margin-right:19%;
+
+}
+
+.logo img {
+	margin-left:14%;
+	width:73%;
+}
+
+.logo h1 {
+	font-size:77px;
+	margin-top: -2%;
+
+}
+
+.userInput h2 {
+	font-size:45px;
+	margin: 4% 0 4% 10%;
+}
+
+table {
+	margin:-4% 0 8% 7%;
+	border-spacing: 100px 22px;
+}
+
+table td input {
+	height:25px;
+	border:2px solid black;
+	height:36px;
+	width:164px;
+}
+
+.text {
+	width:60%;
+	font-size:25px;
+	padding-left:10%;
+}

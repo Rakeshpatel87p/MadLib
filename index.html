@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="">
+<html lang="en">
+
+<head>
+    <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>MadLibs Challenge</title>
+</head>
+<header>
+    <div class="happy">
+        <img src="images/mad-lib-happy-face.png" alt="MadLib Happy Face" class="happyFace">
+    </div>
+    <div class="logo">
+        <img src="images/ng-mad-libs-logo.png" alt="logo">
+        <h1>Automate This!</h1>
+    </div>
+</header>
+
+<body>
+    <div class="userInput">
+        <h2>Provide the following words</h2>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Male name" ng-model="maleName" />
+                </td>
+                <td>
+                    <input type="text" placeholder="Dirty task" ng-model="task" />
+                </td>
+                <td>
+                    <input type="text" placeholder="Job title" ng-model="job" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Obnoxious celebrity" ng-model="celebrity" />
+                </td>
+                <td>
+                    <input type="text" placeholder="Huge number" ng-model="number" />
+                </td>
+                <td>
+                    <input type="text" placeholder="Tedius task" ng-model="task" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Useless Skill" ng-model="skill" />
+                </td>
+                <td>
+                    <input type="text" placeholder="Adjective" ng-model="adjective" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr />
+    <div class="text">
+        <p><span ng-class="underline">{{ maleName }}</span> was a <span>{{ job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ task }}</span> and <span>{{ task }}</span>. So, <span>{{ maleName }}</span> met with his life mentor <span>{{ celebrity }}</span> who told him to learn how to <span>{{ skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ skill }}</span> so he studied programming instead.</p>
+        <p>What a great decision! WIt hhis new skills, <span>{{ maleName }}</span> built a(n) <span>{{ adjective }}</span> robot named <span>{{ celebrity }}</span> that not only loved <span>{{ task }}</span> but did it <span>{{ number }}</span> faster.</p>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/app.js"></script>
+
+</html>
