@@ -35,7 +35,7 @@ header {
 }
 
 .userInput h2 {
-	font-size:45px;
+	font-size:30px;
 	margin: 4% 0 4% 10%;
 }
 
@@ -49,6 +49,10 @@ table td input {
 	border:2px solid black;
 	height:36px;
 	width:164px;
+}
+
+span {
+	text-decoration: underline;
 }
 
 .text {
