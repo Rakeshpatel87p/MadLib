@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="">
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
-    <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="js/app.js"></script>
     <meta charset="UTF-8">
     <title>MadLibs Challenge</title>
 </head>
@@ -19,48 +19,50 @@
 </header>
 
 <body>
-    <div class="userInput">
-        <h2>Provide the following words</h2>
-        <table>
-            <tr>
-                <td>
-                    <input type="text" placeholder="Male name" ng-model="maleName" />
-                </td>
-                <td>
-                    <input type="text" placeholder="Dirty task" ng-model="task" />
-                </td>
-                <td>
-                    <input type="text" placeholder="Job title" ng-model="job" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" placeholder="Obnoxious celebrity" ng-model="celebrity" />
-                </td>
-                <td>
-                    <input type="text" placeholder="Huge number" ng-model="number" />
-                </td>
-                <td>
-                    <input type="text" placeholder="Tedius task" ng-model="task" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" placeholder="Useless Skill" ng-model="skill" />
-                </td>
-                <td>
-                    <input type="text" placeholder="Adjective" ng-model="adjective" />
-                </td>
-            </tr>
-        </table>
+    <div class="userInput" ng-controller="fillContent">
+        <div>
+            <h2>Provide the following words</h2>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Male name" class="name" ng-model="content.maleName" />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Dirty task" ng-model="content.task" />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Job title" ng-model="content.job" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Obnoxious celebrity" ng-model="content.celebrity" />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Huge number" ng-model="content.number" />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Tedius task" ng-model="content.task" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Useless Skill" ng-model="content.skill" />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Adjective" ng-model="content.adjective" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div class="text">
+            <p><span>{{content.maleName}}</span> was a <span>{{ content.job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ content.task }}</span> and <span>{{ content.task }}</span>. So, <span>{{ content.maleName  }}</span> met with his life mentor <span>{{ content.celebrity }}</span> who told him to learn how to <span>{{ content.skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ content.skill }}</span> so he studied programming instead.</p>
+            <p>What a great decision! With his new skills, <span>{{ content.maleName  }}</span> built a(n) <span>{{ content.adjective }}</span> robot named <span>{{ content.celebrity }}</span> that not only loved <span>{{ content.task }}</span> but did it <span>{{ content.number }}</span> faster.</p>
+        </div>
     </div>
-    <hr />
-    <div class="text">
-        <p><span ng-class="underline">{{ maleName }}</span> was a <span>{{ job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ task }}</span> and <span>{{ task }}</span>. So, <span>{{ maleName }}</span> met with his life mentor <span>{{ celebrity }}</span> who told him to learn how to <span>{{ skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ skill }}</span> so he studied programming instead.</p>
-        <p>What a great decision! WIt hhis new skills, <span>{{ maleName }}</span> built a(n) <span>{{ adjective }}</span> robot named <span>{{ celebrity }}</span> that not only loved <span>{{ task }}</span> but did it <span>{{ number }}</span> faster.</p>
-    </div>
+<!-- <script src="../angular.js"></script> -->
 </body>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/app.js"></script>
 
 </html>
