@@ -20,48 +20,55 @@
 
 <body>
     <div class="userInput" ng-controller="fillContent">
-        <div>
+        <form name="myForm" ng-submit="submit()">
+        <div ng-hide="myForm.$submitted && submit()">
             <h2>Provide the following words</h2>
             <table>
                 <tr>
                     <td>
-                        <input type="text" placeholder="Male name" class="name" ng-model="content.maleName" />
+                        <input type="text" placeholder="Male name" class="name" ng-model="content.maleName" required/>
                     </td>
                     <td>
-                        <input type="text" placeholder="Dirty task" ng-model="content.task" />
+                        <input type="text" placeholder="Dirty task" ng-model="content.task" required />
                     </td>
                     <td>
-                        <input type="text" placeholder="Job title" ng-model="content.job" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Obnoxious celebrity" ng-model="content.celebrity" />
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Huge number" ng-model="content.number" />
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Tedius task" ng-model="content.task" />
+                        <input type="text" placeholder="Job title" ng-model="content.job" required />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" placeholder="Useless Skill" ng-model="content.skill" />
+                        <input type="text" placeholder="Obnoxious celebrity" ng-model="content.celebrity" required />
                     </td>
                     <td>
-                        <input type="text" placeholder="Adjective" ng-model="content.adjective" />
+                        <input type="number" name="texty" placeholder="Huge number" ng-model="content.number" ng-min=1000 required /><br />
+
+                        <span class="error" ng-if="myForm.$submitted && myForm.texty.$invalid">Think Bigger!</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Tedius task" ng-model="content.task" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Useless Skill" ng-model="content.skill" required />
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Adjective" ng-model="content.adjective" required />
                     </td>
                 </tr>
             </table>
+                <button type="submit" ng-submit="myForm.$valid && submit()">Generate My MadLib</button>
+            </form>
         </div>
         <hr />
-        <div class="text">
+        <div class="text" ng-show="myForm.$submitted && submit()">
             <p><span>{{content.maleName}}</span> was a <span>{{ content.job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ content.task }}</span> and <span>{{ content.task }}</span>. So, <span>{{ content.maleName  }}</span> met with his life mentor <span>{{ content.celebrity }}</span> who told him to learn how to <span>{{ content.skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ content.skill }}</span> so he studied programming instead.</p>
             <p>What a great decision! With his new skills, <span>{{ content.maleName  }}</span> built a(n) <span>{{ content.adjective }}</span> robot named <span>{{ content.celebrity }}</span> that not only loved <span>{{ content.task }}</span> but did it <span>{{ content.number }}</span> faster.</p>
+
+            <button type="submit" ng-submit="startOver()">Start Over</button>
         </div>
     </div>
-<!-- <script src="../angular.js"></script> -->
+    <!-- <script src="../angular.js"></script> -->
 </body>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
