@@ -3,8 +3,6 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
-    <script src="js/app.js"></script>
     <meta charset="UTF-8">
     <title>MadLibs Challenge</title>
 </head>
@@ -20,56 +18,71 @@
 
 <body>
     <div class="userInput" ng-controller="fillContent">
-        <form name="myForm" ng-submit="submit()">
-        <div ng-hide="myForm.$submitted && submit()">
-            <h2>Provide the following words</h2>
-            <table>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Male name" class="name" ng-model="content.maleName" required/>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Dirty task" ng-model="content.task" required />
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Job title" ng-model="content.job" required />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Obnoxious celebrity" ng-model="content.celebrity" required />
-                    </td>
-                    <td>
-                        <input type="number" name="texty" placeholder="Huge number" ng-model="content.number" ng-min=1000 required /><br />
-
-                        <span class="error" ng-if="myForm.$submitted && myForm.texty.$invalid">Think Bigger!</span>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Tedius task" ng-model="content.task" required />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Useless Skill" ng-model="content.skill" required />
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Adjective" ng-model="content.adjective" required />
-                    </td>
-                </tr>
-            </table>
-                <button type="submit" ng-submit="myForm.$valid && submit()">Generate My MadLib</button>
-            </form>
+        <form name="myForm" novalidate ng-submit="submit()">
+            <div ng-hide="crazyScope">
+                <h2>Provide the following words</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="namey" placeholder="Male name" class="name" ng-model="content.maleName" required/>
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.namey.$error.required">Pick a Name</span>
+                        </td>
+                        <td>
+                            <input type="text" name="tasky" placeholder="Dirty task" ng-model="content.task" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.tasky.$error.required">Pick a Dirty Task</span>
+                        </td>
+                        <td>
+                            <input type="text" name="joby" placeholder="Job title" ng-model="content.job" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.joby.$error.required">Pick a Job Title</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="celeby" placeholder="Obnoxious celebrity" ng-model="content.celebrity" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.celeby.$error.required">Name a Celebrity</span>
+                        </td>
+                        <td>
+                            <input type="number" name="texty" placeholder="Huge number" ng-model="content.number" ng-min=1000 required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.texty.$invalid">Think Bigger!</span>
+                        </td>
+                        <td>
+                            <input type="text" name="tasky" placeholder="Tedious task" ng-model="content.task" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.tasky.$error.required">Pick a Tedious Task</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="skilly" placeholder="Useless Skill" ng-model="content.skill" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.skilly.$error.required">Pick a Useless Skill</span>
+                        </td>
+                        <td>
+                            <input type="text" name="adjec" placeholder="Adjective" ng-model="content.adjective" required />
+                            <br />
+                            <span class="error" ng-if="myForm.$submitted && myForm.adjec.$error.required">Pick an Adjective</span>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit">Generate My MadLib</button>
+        </form>
         </div>
         <hr />
-        <div class="text" ng-show="myForm.$submitted && submit()">
+        <div class="text" ng-show="crazyScope">
             <p><span>{{content.maleName}}</span> was a <span>{{ content.job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ content.task }}</span> and <span>{{ content.task }}</span>. So, <span>{{ content.maleName  }}</span> met with his life mentor <span>{{ content.celebrity }}</span> who told him to learn how to <span>{{ content.skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ content.skill }}</span> so he studied programming instead.</p>
             <p>What a great decision! With his new skills, <span>{{ content.maleName  }}</span> built a(n) <span>{{ content.adjective }}</span> robot named <span>{{ content.celebrity }}</span> that not only loved <span>{{ content.task }}</span> but did it <span>{{ content.number }}</span> faster.</p>
-
-            <button type="submit" ng-submit="startOver()">Start Over</button>
+            <button type="submit" ng-click="startOver()">Start Over</button>
         </div>
     </div>
     <!-- <script src="../angular.js"></script> -->
+    <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/app.js"></script>
 </body>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </html>
