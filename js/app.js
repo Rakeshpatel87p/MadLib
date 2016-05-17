@@ -1,17 +1,17 @@
-console.log('hey');
+var app = angular.module('myApp', ['ngAnimate']);
+
 angular.module('myApp', [])
     .controller('fillContent', function($scope) {
 
         var content = {
-        	maleName:"Joey"
-        };
-            // maleName: '',
-            // job: '',
-            // task: '',
-            // celebrity: '',
-            // skill: '',
-            // adjective: '',
-            // number: ''
+            maleName: 'Joey',
+            job: 'TashCan Washer',
+            task: 'Wash plates',
+            celebrity: 'Michelle Phieffer',
+            skill: 'Glue together yardsticks',
+            adjective: 'uberrific',
+            number: ''
+            };
 
         $scope.content = content;
         $scope.crazyScope = false;

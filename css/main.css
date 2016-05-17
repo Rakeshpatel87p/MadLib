@@ -55,8 +55,14 @@ span {
 	text-decoration: underline;
 }
 
-.text {
+/*.animateContent {
 	width:60%;
 	font-size:25px;
 	padding-left:10%;
+	transition: all linear 0.5s;
+}*/
+
+.animateContent.ng-hide-add, .animateContent.ng-hide-remove {
+  transition: 2s linear all;
+  opacity:0;
 }
