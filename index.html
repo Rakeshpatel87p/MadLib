@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <title>MadLibs Challenge</title>
 </head>
-<header>
-    <div class="happy">
-        <img src="images/mad-lib-happy-face.png" alt="MadLib Happy Face" class="happyFace">
-    </div>
-    <div class="logo">
-        <img src="images/ng-mad-libs-logo.png" alt="logo">
-        <h1>Automate This!</h1>
-    </div>
-</header>
 
 <body ng-app="ngAnimate">
+    <header>
+        <div class="happy">
+            <img src="images/mad-lib-happy-face.png" alt="MadLib Happy Face" class="happyFace">
+        </div>
+        <div class="logo">
+            <img src="images/ng-mad-libs-logo.png" alt="logo">
+            <h1>Automate This!</h1>
+        </div>
+    </header>
     <div class="userInput" ng-controller="fillContent">
-        <form name="myForm" novalidate ng-submit="submit()">
+        <form name="myForm" class="myForm initialView" novalidate ng-submit="submit()">
             <div ng-hide="crazyScope">
                 <h2>Provide the following words</h2>
                 <table>
@@ -70,14 +70,13 @@
                     </tr>
                 </table>
                 <button type="submit">Generate My MadLib</button>
+            </div>
         </form>
-        </div>
-        <hr />
-        <div class="animateContent" ng-show="crazyScope">
-            <p><span>{{content.maleName}}</span> was a <span>{{ content.job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ content.task }}</span> and <span>{{ content.task }}</span>. So, <span>{{ content.maleName  }}</span> met with his life mentor <span>{{ content.celebrity }}</span> who told him to learn how to <span>{{ content.skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ content.skill }}</span> so he studied programming instead.</p>
-            <p>What a great decision! With his new skills, <span>{{ content.maleName  }}</span> built a(n) <span>{{ content.adjective }}</span> robot named <span>{{ content.celebrity }}</span> that not only loved <span>{{ content.task }}</span> but did it <span>{{ content.number }}</span> faster.</p>
-            <button type="submit" ng-click="startOver()">Start Over</button>
-        </div>
+    <div class="animateContent" ng-if="crazyScope">
+        <p><span>{{content.maleName}}</span> was a <span>{{ content.job }}</span> who loved technology. Although he loved parts of his job, he absolutely hated <span>{{ content.task }}</span> and <span>{{ content.task }}</span>. So, <span>{{ content.maleName  }}</span> met with his life mentor <span>{{ content.celebrity }}</span> who told him to learn how to <span>{{ content.skill }}</span> with Thinkful. Thinkful didnt offer a couse on <span>{{ content.skill }}</span> so he studied programming instead.</p>
+        <p>What a great decision! With his new skills, <span>{{ content.maleName  }}</span> built a(n) <span>{{ content.adjective }}</span> robot named <span>{{ content.celebrity }}</span> that not only loved <span>{{ content.task }}</span> but did it <span>{{ content.number }}</span> faster.</p>
+        <button type="submit" ng-click="startOver()">Start Over</button>
+    </div>
     </div>
     <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.js"></script>
